@@ -8,11 +8,12 @@ int main(int argc, char ** argv) {
 		fprintf(stderr,"not enought parametrs\n");
 		return EXIT_FAILURE;
 	}
-	char textbuf[4096]; // memset buffer for text
+	int size_biff = 16000;
+	char textbuf[size_biff]; // memset buffer for text
 	FILE * fp;
 	fp = fopen(argv[3],"r");
-	memset(textbuf, 0, 4096);
-	fread(textbuf, 1, 4096, fp);
+	memset(textbuf, 0, size_biff);
+	fread(textbuf, 1, size_biff, fp);
 	fclose(fp);
 	fprintf(stdout,"size: %lu\n", strlen(textbuf));
 	FILE * inputp = fopen(argv[1],"rb"); // open read file in binary

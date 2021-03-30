@@ -3,7 +3,7 @@ NTHREAD = 4
 flag = -std=c99 -Wall -pedantic -lpthread
 
 # pic.bmp to code from
-pic1 = pic.bmp
+pic1 = heart.bmp
 # pic.bmo to code in to
 pic2 = res.bmp
 
