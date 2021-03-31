@@ -8,6 +8,7 @@ int main(int argc, char ** argv) {
 		fprintf(stderr,"not enought parametrs\n");
 		return EXIT_FAILURE;
 	}
+	fprintf(stdout,"size of: %lu, %lu\n", sizeof(uint8_t), sizeof(char));
 	int size_biff = 16000;
 	char textbuf[size_biff]; // memset buffer for text
 	FILE * fp;

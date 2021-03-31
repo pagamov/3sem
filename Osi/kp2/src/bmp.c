@@ -60,7 +60,7 @@ BMPImage * readImage(FILE * fp) {
 }
 
 void freeImage(BMPImage * image) {
-	for ( int i = 0;i < image->norm_height; i++) {
+	for (int i = 0;i < image->norm_height; i++) {
 		free(image->pixels[i]);
 	}
 	free(image->pixels);
@@ -164,10 +164,10 @@ void writeImage(BMPImage * image, FILE * fp, char * data, char * nthread) {
 	//write array into file
 	for (int i = 0; i < image->norm_height; i++) {
 		for (int j = 0; j < image->header.width_px; j++) {
-			fwrite(&(image->pixels[i][j].blue),1,1,fp);
-			fwrite(&(image->pixels[i][j].green),1,1,fp);
-			fwrite(&(image->pixels[i][j].red),1,1,fp);
-			fwrite(&(image->pixels[i][j].alpha),1,1,fp);
+			fwrite(&(image->pixels[i][j].blue),sizeof(uint8_t),1,fp);
+			fwrite(&(image->pixels[i][j].green),sizeof(uint8_t),1,fp);
+			fwrite(&(image->pixels[i][j].red),sizeof(uint8_t),1,fp);
+			fwrite(&(image->pixels[i][j].alpha),sizeof(uint8_t),1,fp);
 		}
 	}
 }
